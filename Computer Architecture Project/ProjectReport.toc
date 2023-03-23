@@ -1,0 +1,3 @@
+\contentsline {section}{\numberline {1}Sorting Algorithm on a Single Cycle Processor}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Selection Sort Assembly Code}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Selection Sort Python Code}{4}{}%
