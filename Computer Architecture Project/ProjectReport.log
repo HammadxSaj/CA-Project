@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.24)  23 MAR 2023 23:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.24)  5 APR 2023 12:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -84,7 +84,11 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
 File: l3backend-pdftex.def 2022-09-28 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count267
 \l__pdf_internal_box=\box53
-) (ProjectReport.aux)
+) (ProjectReport.aux
+
+LaTeX Warning: Label `fig:SelectionSort' multiply defined.
+
+)
 \openout1 = `ProjectReport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
@@ -142,19 +146,38 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 63.
  [3] (C:\Users\Hammad Sajid\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-) [4] [5] (ProjectReport.aux) ) 
+) [4]
+<before.png, id=24, 359.54324pt x 435.42674pt>
+File: before.png Graphic file (type png)
+<use before.png>
+Package pdftex.def Info: before.png  used on input line 164.
+(pdftex.def)             Requested size: 276.00105pt x 334.25644pt.
+<after.png, id=25, 365.56575pt x 437.83575pt>
+File: after.png Graphic file (type png)
+<use after.png>
+Package pdftex.def Info: after.png  used on input line 171.
+(pdftex.def)             Requested size: 276.00105pt x 330.56064pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[5 <./before.png>] [6 <./after.png>] (ProjectReport.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3675 strings out of 475385
- 53822 string characters out of 2773567
- 855961 words of memory out of 3000000
- 25063 multiletter control sequences out of 15000+600000
+ 3690 strings out of 475385
+ 54036 string characters out of 2773567
+ 865008 words of memory out of 3000000
+ 25076 multiletter control sequences out of 15000+600000
  472185 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,6n,62p,297b,1805s stack positions out of 10000i,1000n,20000p,200000b,80000s
 <C:/Users/Hammad Sajid/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Hammad Sajid/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Hammad Sajid/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Users/Hammad Sajid/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Hammad Sajid/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Hammad Sajid/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Hammad Sajid/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on ProjectReport.pdf (5 pages, 383005 bytes).
+Output written on ProjectReport.pdf (6 pages, 411182 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
+ 63 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

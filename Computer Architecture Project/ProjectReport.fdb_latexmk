@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1679595440 "c:/Users/Hammad Sajid/Documents/GitHub/CA-Project/Computer Architecture Project/ProjectReport.tex" "ProjectReport.pdf" "ProjectReport" 1679595442 0
-  "C:/Users/Hammad Sajid/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1677772617 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
+["pdflatex"] 1680681127 "c:/Users/Hammad Sajid/Documents/GitHub/CA-Project/Computer Architecture Project/ProjectReport.tex" "ProjectReport.pdf" "ProjectReport" 1680681129 0
+  "C:/Users/Hammad Sajid/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1680623559 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Hammad Sajid/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1674557345 10791350 8f2dbc6e29e3f8f175a08df91ecf5acf ""
   "C:/Users/Hammad Sajid/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "C:/Users/Hammad Sajid/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -37,10 +37,12 @@
   "C:/Users/Hammad Sajid/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstmisc.sty" 1623004942 77022 ee25ce086f4a79d8cf73bac6f94c02a5 ""
   "C:/Users/Hammad Sajid/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "LOGOHABIB.png" 1679595392 254145 82541445608d28de48be0697f302e331 ""
-  "ProjectReport.aux" 1679595442 668 b8a5e55621bda63c0621cab58cb4e44f "pdflatex"
-  "ProjectReport.tex" 1679595437 4690 a5983d7155c3adf62f06951900fad7a6 ""
-  "ProjectReport.toc" 1679595442 250 59e2fb3247ee3447ed5a081308cb2636 "pdflatex"
-  "c:/Users/Hammad Sajid/Documents/GitHub/CA-Project/Computer Architecture Project/ProjectReport.tex" 1679595437 4690 a5983d7155c3adf62f06951900fad7a6 ""
+  "ProjectReport.aux" 1680681129 1133 383f7372066ecf6a28620fa510e52e55 "pdflatex"
+  "ProjectReport.tex" 1680681125 5144 f4799c3ce71936e97f75f444501fd90c ""
+  "ProjectReport.toc" 1680681129 335 94278ad9437b050e8e6a841e1932764a "pdflatex"
+  "after.png" 1680681087 20879 c88944f69b90620c0f2a989bae9017a5 ""
+  "before.png" 1680680916 20914 12794c2fbd6373c4a78a2699fa52c9c4 ""
+  "c:/Users/Hammad Sajid/Documents/GitHub/CA-Project/Computer Architecture Project/ProjectReport.tex" 1680681125 5144 f4799c3ce71936e97f75f444501fd90c ""
   (generated)
   "ProjectReport.aux"
   "ProjectReport.log"

@@ -83,7 +83,7 @@ filled:
 addi x30, x0, 0 #i = 0 (for i loop)
 addi x31, x30, 0 #j = 0
 addi x29, x0, 0 #for offset calculation
-addi x11, x0, 6
+addi x11, x0, 6 #condition to check if i = size of array 
 
 #Code below is for 1st i loop
 
@@ -157,5 +157,20 @@ for ind in range(size):
     (array[ind], array[min_index]) = (array[min_index], array[ind])    
 \end{lstlisting}
 
+\subsection{Selection Sort on Venus Simulator}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{before.png}
+    \caption{Image of Memory before Sorting}
+    \label{fig:SelectionSort}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{after.png}
+    \caption{Image of Memory after Sorting}
+    \label{fig:SelectionSort}
+\end{figure}
 
 \end{document}
