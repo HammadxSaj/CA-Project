@@ -170,7 +170,156 @@ for ind in range(size):
     \centering
     \includegraphics[width=0.8\textwidth]{after.png}
     \caption{Image of Memory after Sorting}
-    \label{fig:SelectionSort}
+    \label{fig:SelectionSort2}
 \end{figure}
+
+\section{Design Modules}
+
+\subsection{RISC-V Processor}
+
+\begin{lstlisting}[caption={RISC-V Design Module Code}, captionpos=b, language=RISC-V]
+`timescale 1ns / 1ps
+
+module risc5processor(
+    input clk,
+    input reset,
+    output wire [63:0] PC_In,
+    output wire [63:0] PC_Out, // Instruction address
+    output wire [31:0] instruction,
+    output wire [4:0] rs1, 
+    output wire [4:0] rs2, 
+    output wire [4:0] rd,
+    output wire [63:0] WriteData,
+    output wire [63:0] readData1,
+    output wire [63:0] readData2,
+    output wire [63:0] imm_data,
+    output wire [63:0] Result,
+    output wire ZERO,
+    output wire [63:0] Read_Data,
+    output wire [6:0] opcode,
+    output wire [2:0] funct3,
+    output wire [6:0] funct7,
+    output wire Branch,
+    output wire MemRead,
+    output wire MemtoReg,
+    output wire MemWrite,
+    output wire ALUSrc,
+    output wire Regwrite,
+    output wire [63:0] ele1,
+    output wire [63:0] ele2,
+    output wire [63:0] ele3,
+    output wire [63:0] ele4,
+    output wire [63:0] ele5,
+    output wire [63:0] ele6
+    );
+
+    wire [63:0] out1;
+    wire [63:0] out2;
+    wire [1:0] ALUOp;
+    wire [3:0] Operation;
+    wire [63:0] data_out;
+    
+    //The code below is for program counter to go to next address
+    Program_Counter pc (clk,reset, PC_In, PC_Out);
+    
+    //Add +4 to previous instruction for next instruction
+    Adder add1 (PC_Out, 64`d4, out1);
+    
+    //Code below is for instruction memory instantiation
+    Instruction_Memory insmem (PC_Out, instruction);
+    
+    //Code below is for instruction parser instantiation
+    InsParser inspar (instruction, opcode, rd, funct3, rs1, rs2, funct7);
+    
+    //Code below is for control unit instantiation
+    Control_Unit conunit (opcode, Branch, MemRead, MemtoReg, MemWrite, ALUSrc, Regwrite, ALUOp);
+    
+    //Code below is for register file instantiation
+    registerFile regf (WriteData, rs1, rs2,rd, Regwrite, clk, reset, readData1, readData2); 
+    
+    //Code below is for immediate generator instantiation
+    ImmGen immgen (instruction, imm_data);
+    
+    //Code below is for alu control instantiation
+    ALU_Control ALUcont (ALUOp, {instruction[30], instruction[14:12]}, Operation);
+    
+    //Code below is for ALU mux instantiation to choose imm data/readdata2
+    Mux ALUs (readData2, imm_data, ALUSrc, data_out); 
+    
+    //Code below is for ALU instantiation    
+    ALU_64_bit ALU (readData1, data_out, Operation, Result, ZERO);
+    
+    //Code below is for data memory instantiation
+    Data_Memory datamem (Result, readData2, clk, MemWrite, MemRead, Read_Data, ele1, ele2, ele3, ele4, ele5, ele6);
+    
+    //Code below is for data memory mux instantiation to select between alu result or read data for R-type/S-type/I-type ins   
+    Mux memreg (Result, Read_Data, MemtoReg, WriteData); 
+    
+    //Code below is for branch adder instantiation to add branch and prev instruction address.
+    Adder add2 (PC_Out,(imm_data << 1),out2);
+    
+    //code below is for program counter mux instantiation to select between adder +4 instruction or branch ins
+    Mux PCs (out1, out2, (Branch & ZERO) , PC_In); 
+    
+endmodule  
+\end{lstlisting}
+
+\section{Simulation Sources}
+
+\begin{lstlisting}[caption={RISC-V Simulation Source Code}, captionpos=b, language=RISC-V]
+`timescale 1ns / 1ps
+
+module risc5tb();
+    reg clk;
+    reg reset;
+    wire [63:0] PC_In;
+    wire [63:0] PC_Out;
+    wire [31:0] instruction;
+    wire [4:0] rs1; 
+    wire [4:0] rs2; 
+    wire [4:0] rd;
+    wire [63:0] WriteData;
+    wire [63:0] readData1;
+    wire [63:0] readData2;
+    wire [63:0] imm_data;
+    wire [63:0] Result;
+    wire ZERO;
+    wire [63:0] Read_Data;
+    wire [6:0] opcode;
+    wire [2:0] funct3;
+    wire [6:0] funct7;
+    wire [63:0] ele1;
+    wire [63:0] ele2;
+    wire [63:0] ele3;
+    wire [63:0] ele4;
+    wire [63:0] ele5;
+    wire [63:0] ele6;
+    wire Branch;
+    wire MemRead;
+    wire MemtoReg;
+    wire MemWrite;
+    wire ALUSrc;
+    wire Regwrite;
+    
+    //Instantiating RISC V processor 
+    risc5processor processor (clk, reset, PC_In, PC_Out, instruction, rs1, rs2, rd, WriteData, readData1, readData2, imm_data, Result, ZERO, Read_Data, opcode, funct3, funct7, Branch, MemRead, MemtoReg, MemWrite, ALUSrc, Regwrite, ele1, ele2, ele3, ele4, ele5, ele6);
+
+        initial
+            begin
+            clk = 1'b0;
+            reset = 1'b1;
+                #10
+            reset = 1'b0;
+            end
+            
+            always
+            begin
+                #5
+                clk = ~clk;
+            end 
+        
+endmodule
+
+\end{lstlisting}
 
 \end{document}
