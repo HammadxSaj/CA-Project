@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue Apr 25 13:51:00 2023
+# Process ID: 6320
+# Current directory: D:/Universty Files/NON-PIPELINED WORKING FIN/project_5
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5648 D:\Universty Files\NON-PIPELINED WORKING FIN\project_5\project_5.xpr
+# Log file: D:/Universty Files/NON-PIPELINED WORKING FIN/project_5/vivado.log
+# Journal file: D:/Universty Files/NON-PIPELINED WORKING FIN/project_5\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Universty Files/NON-PIPELINED WORKING FIN/project_5/project_5.xpr}
+update_compile_order -fileset sources_1
