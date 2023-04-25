@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue Apr 25 12:53:45 2023
+# Process ID: 22444
+# Current directory: D:/Universty Files/NON-PIPELINED WORKING FIN/project_5
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22664 D:\Universty Files\NON-PIPELINED WORKING FIN\project_5\project_5.xpr
+# Log file: D:/Universty Files/NON-PIPELINED WORKING FIN/project_5/vivado.log
+# Journal file: D:/Universty Files/NON-PIPELINED WORKING FIN/project_5\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Universty Files/NON-PIPELINED WORKING FIN/project_5/project_5.xpr}
+update_compile_order -fileset sources_1
+launch_simulation
+source risc5tb.tcl
+close_sim
+launch_simulation
+source risc5tb.tcl
+close_sim
+launch_simulation
+source risc5tb.tcl
+run all
+close_sim
