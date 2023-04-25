@@ -2,6 +2,7 @@
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{hyperref}
 
 \begin{document}
 
@@ -173,153 +174,460 @@ for ind in range(size):
     \label{fig:SelectionSort2}
 \end{figure}
 
-\section{Design Modules}
+% \section{Single Cycle Processor for BLT instruction - Changes}
 
-\subsection{RISC-V Processor}
 
-\begin{lstlisting}[caption={RISC-V Design Module Code}, captionpos=b, language=RISC-V]
-`timescale 1ns / 1ps
+\section*{Introducing Pipeline Stages}
 
-module risc5processor(
+A difficulty with implementation of single cycle processor is that the processor only executes one instruction at a time, and only after that instruction is finished is execution of the subsequent instruction begins, which is counter-productive. This was demonstrated in the previous section using a single cycle processor that could do a Selection sort. Given that the majority of the components in our processors would remain idle, it is immediately clear how wasteful this would be and how much processing power it would waste. This is why, in this section, we'll try to fix it by adding pipelining to our single-cycle processor.
+
+Pipelining would allow us to execute numerous commands at once. An in-depth explanation of how this works will be provided in the following section, but for now, consider that one component will work on one portion of the instruction while the other will work on a different part at the same point, thus increasing the efficiency of the whole program. We'll be incorporating a five-stage pipeline into our Risc-V processor, allowing it to handle five instructions at once. The five stages we implemented for the processor are as follows:
+
+\begin{enumerate}
+    \item IF: Instruction Fetch
+    \item ID: Instruction Decode 
+    \item EX: Execution or address calculation
+    \item MEM: Data Memory Access
+    \item WB: Write back
+
+\end{enumerate}
+
+We will be introducing four new registers to implement the pipelining stage and to make our program more efficient. These registers are as follows:
+
+\begin{enumerate}
+    \item IF/ID register: This register will be used to store the instruction fetched in the IF stage and will be used in the ID stage.
+    \item ID/EX register: This register will be used to store the instruction decoded in the ID stage and will be used in the EX stage.
+    \item EX/MEM register: This register stores the result of the execution stage.
+    \item MEM/WB register: This register stores the result of the memory access stage.
+\end{enumerate}
+
+These four newly introduced pipeline registers help in the pipelining process. These registers allow the pipeline to handle multiple instructions simultaneously and keep track of the progress of each instruction as it moves through the pipeline. The use of these registers helps to improve the performance of the processor by enabling the processing of multiple instructions in parallel.
+
+An ideal pipeline would be one which continously moves forward and the instructions are only provided and moved forward. However, this is not the case with the pipeline taught to us. e of the PC, choosing between the
+incremented PC and the branch address from the MEM stage. 
+
+Along with the four intermediate pipeline registers, we will also add a control line and a forwarding unit. We extend these registered to store the control lines passed from one stage to another. These registers would be timed to the clock and would either send the stored contents for additional processing or be flushed on each positive edge.
+
+Let us now look at the changes made to the single cycle processor to implement the pipelining. In order to explain the changes made, we will be explaining each pipelining stage separatelty and the significance of the said stage. 
+
+\subsection*{Stage 1 - Instruction Fetch (IF)}
+
+Our processor's instruction fetch (IF) step is its initial operation. This stage, as its name implies, is responsible for reading the instruction from memory. To do this, it first determines the address of the instruction to be read through the PC counter, then reads the instruction from the Instruction memory module and sends it to the next stage through the IF/ID register. This also addresses the jump address if it is a problem.
+
+The following is the module used in the stage. 
+
+\begin{lstlisting}[caption={IF/ID Register}, captionpos=b, language=RISC-V]
+module IF_ID(
     input clk,
     input reset,
-    output wire [63:0] PC_In,
-    output wire [63:0] PC_Out, // Instruction address
-    output wire [31:0] instruction,
-    output wire [4:0] rs1, 
-    output wire [4:0] rs2, 
-    output wire [4:0] rd,
-    output wire [63:0] WriteData,
-    output wire [63:0] readData1,
-    output wire [63:0] readData2,
-    output wire [63:0] imm_data,
-    output wire [63:0] Result,
-    output wire ZERO,
-    output wire [63:0] Read_Data,
-    output wire [6:0] opcode,
-    output wire [2:0] funct3,
-    output wire [6:0] funct7,
-    output wire Branch,
-    output wire MemRead,
-    output wire MemtoReg,
-    output wire MemWrite,
-    output wire ALUSrc,
-    output wire Regwrite,
-    output wire [63:0] ele1,
-    output wire [63:0] ele2,
-    output wire [63:0] ele3,
-    output wire [63:0] ele4,
-    output wire [63:0] ele5,
-    output wire [63:0] ele6
+    input [31:0] instruction,
+    input [63:0] PC_Out,
+    input IF_write,
+    output reg [31:0] IF_ID_instruction,
+    output reg [63:0] IF_ID_PCOut
     );
-
-    wire [63:0] out1;
-    wire [63:0] out2;
-    wire [1:0] ALUOp;
-    wire [3:0] Operation;
-    wire [63:0] data_out;
     
-    //The code below is for program counter to go to next address
-    Program_Counter pc (clk,reset, PC_In, PC_Out);
-    
-    //Add +4 to previous instruction for next instruction
-    Adder add1 (PC_Out, 64`d4, out1);
-    
-    //Code below is for instruction memory instantiation
-    Instruction_Memory insmem (PC_Out, instruction);
-    
-    //Code below is for instruction parser instantiation
-    InsParser inspar (instruction, opcode, rd, funct3, rs1, rs2, funct7);
-    
-    //Code below is for control unit instantiation
-    Control_Unit conunit (opcode, Branch, MemRead, MemtoReg, MemWrite, ALUSrc, Regwrite, ALUOp);
-    
-    //Code below is for register file instantiation
-    registerFile regf (WriteData, rs1, rs2,rd, Regwrite, clk, reset, readData1, readData2); 
-    
-    //Code below is for immediate generator instantiation
-    ImmGen immgen (instruction, imm_data);
-    
-    //Code below is for alu control instantiation
-    ALU_Control ALUcont (ALUOp, {instruction[30], instruction[14:12]}, Operation);
-    
-    //Code below is for ALU mux instantiation to choose imm data/readdata2
-    Mux ALUs (readData2, imm_data, ALUSrc, data_out); 
-    
-    //Code below is for ALU instantiation    
-    ALU_64_bit ALU (readData1, data_out, Operation, Result, ZERO);
-    
-    //Code below is for data memory instantiation
-    Data_Memory datamem (Result, readData2, clk, MemWrite, MemRead, Read_Data, ele1, ele2, ele3, ele4, ele5, ele6);
-    
-    //Code below is for data memory mux instantiation to select between alu result or read data for R-type/S-type/I-type ins   
-    Mux memreg (Result, Read_Data, MemtoReg, WriteData); 
-    
-    //Code below is for branch adder instantiation to add branch and prev instruction address.
-    Adder add2 (PC_Out,(imm_data << 1),out2);
-    
-    //code below is for program counter mux instantiation to select between adder +4 instruction or branch ins
-    Mux PCs (out1, out2, (Branch & ZERO) , PC_In); 
-    
-endmodule  
+    always @(posedge clk or reset)
+        begin
+            if (reset == 1`b1)
+                begin
+                    IF_ID_instruction = 0;
+                    IF_ID_PCOut = 0;
+                end
+            else if (clk==1 || IF_write == 1)
+                begin
+                    IF_ID_instruction = instruction;
+                    IF_ID_PCOut = PC_Out;
+                end
+        end   
+endmodule
 \end{lstlisting}
 
-\section{Simulation Sources}
+Before sending everything to the IF/ID register, which on the subsequent clock cycle would transfer the contents to the next step, the following connections are made. The intermediate connections between the Instruction Fetch stage and the Instruction decode stage are made by the outputs from this register.
 
-\begin{lstlisting}[caption={RISC-V Simulation Source Code}, captionpos=b, language=RISC-V]
-`timescale 1ns / 1ps
+\subsection*{Stage 2 - Instruction Decode (ID)}
 
-module risc5tb();
-    reg clk;
-    reg reset;
-    wire [63:0] PC_In;
-    wire [63:0] PC_Out;
-    wire [31:0] instruction;
-    wire [4:0] rs1; 
-    wire [4:0] rs2; 
-    wire [4:0] rd;
-    wire [63:0] WriteData;
-    wire [63:0] readData1;
-    wire [63:0] readData2;
-    wire [63:0] imm_data;
-    wire [63:0] Result;
-    wire ZERO;
-    wire [63:0] Read_Data;
-    wire [6:0] opcode;
-    wire [2:0] funct3;
-    wire [6:0] funct7;
-    wire [63:0] ele1;
-    wire [63:0] ele2;
-    wire [63:0] ele3;
-    wire [63:0] ele4;
-    wire [63:0] ele5;
-    wire [63:0] ele6;
-    wire Branch;
-    wire MemRead;
-    wire MemtoReg;
-    wire MemWrite;
-    wire ALUSrc;
-    wire Regwrite;
+Our pipeline's second step is responsible for decoding the instruction, reading from registers, and writing to registers. Therefore, it begins by having the IF stage fetch the instruction. Once the 32-bit instruction has been decoded and its opcode, rd, rs1, and rs2 have been determined, it is then passed on to the instruction parser and the data extractor module. The RegisterFile then reads the contents of the registers or writes back to them (Note that writing back requires signals from the MEM/WEB register, indicating that it is a right-to-left operation, but it doesn't interrupt programme flow).
+
+\begin{lstlisting}[caption={IF/ID Register}, captionpos=b, language=RISC-V]
+module ID_EX(
+    input clk,
+    input reset,
+    input branch,
+    input MemRead,
+    input MemtoReg,
+    input MemWrite,
+    input ALUsrc,
+    input RegWrite,
+    input [1:0] ALU_Op, 
+    input [63:0] readdata1,
+    input [63:0] readdata2,
+    input [63:0] immediate,
+    input [63:0] pc_out, 
+    input [4:0] rs1,
+    input [4:0] rs2,
+    input [4:0] rd ,
+    input[3:0] func,
+    output reg branch_out, MemRead_out, MemtoReg_out, MemWrite_out, ALUsrc_out, RegWrite_out, 
+    output reg [1:0] AlU_Op_out, 
+    output reg [63:0]  readdata1_out,readdata2_out,immediate_out,pc_out_out,
+    output reg [4:0] rs1_out, rs2_out, rd_out , 
+    output reg [3:0] func_out
+    );
     
-    //Instantiating RISC V processor 
-    risc5processor processor (clk, reset, PC_In, PC_Out, instruction, rs1, rs2, rd, WriteData, readData1, readData2, imm_data, Result, ZERO, Read_Data, opcode, funct3, funct7, Branch, MemRead, MemtoReg, MemWrite, ALUSrc, Regwrite, ele1, ele2, ele3, ele4, ele5, ele6);
-
-        initial
+        always @(*)
+        begin
+            if (reset==1`b1)
             begin
-            clk = 1'b0;
-            reset = 1'b1;
-                #10
-            reset = 1'b0;
-            end
-            
-            always
-            begin
-                #5
-                clk = ~clk;
-            end 
         
+                branch_out = 0; 
+                MemRead_out=0;
+                MemtoReg_out=0;
+                MemWrite_out=0;
+                ALUsrc_out=0;
+                AlU_Op_out=0;
+                RegWrite_out=0;
+                readdata1_out=0;
+                readdata2_out=0;
+                immediate_out=0;
+                pc_out_out=0;
+                rs1_out= 0;
+                rs2_out=0;
+                rd_out=0;
+                func_out=0;
+                
+            end 
+    else if (clk==1)
+    begin     
+        MemRead_out=MemRead;
+        MemtoReg_out=MemtoReg;
+        MemWrite_out=MemWrite;
+        ALUsrc_out=ALUsrc;
+        AlU_Op_out=ALU_Op;
+        RegWrite_out=RegWrite;
+        readdata1_out=readdata1;
+        readdata2_out=readdata2;
+        immediate_out=immediate;
+        pc_out_out=pc_out;
+        rs1_out= rs1;
+        rs2_out=rs2;
+        rd_out=rd;
+        func_out=func;
+        end   
+    end 
 endmodule
 
 \end{lstlisting}
 
+\subsection*{Stage 3 - Execution (EX)}
+The third stage of our pipeline is the execution stage. This stage is responsible for performing the following two main tasks. 
+
+\begin{enumerate}
+    \item If the instruction is a branch instruction, the adder determines the offset value that must be added in order to determine the address of the subsequent location.
+    \item The ALU resides here, so all the operations are executed here.
+\end{enumerate}
+
+The value that is to be sent to the registers is controlled by the two MUX after we obtained the ALUop from the Instruction Decode register, which is the control line for the ALU. We now shift our focus as to what exactly is the Execution stage carrying out. 
+
+\begin{lstlisting}[caption={IF/ID Register}, captionpos=b, language=RISC-V]
+module EX_MEM(
+    input clk, reset,
+    input [4:0] rd,
+    input [63:0] write_data , 
+    //input branch_MUX,
+    input [63:0] ALU_result, PC_out,
+    input zero, branch, MemRead, MemWrite, RegWrite, MemtoReg, 
+    output reg [4:0] rd_out,
+    output reg [63:0] write_data_out, 
+    output reg [63:0] ALU_result_out, 
+    output reg zero_out, branch_out, MemRead_out, MemWrite_out, RegWrite_out, MemtoReg_out, 
+    output reg [63:0] PC_out_out,
+    output reg branch_MUX_out
+    );
+
+    always @(posedge clk ,posedge reset)
+        begin
+            if (reset==1)
+                begin
+                    PC_out_out=0;
+                    rd_out = 0;
+                    branch_out=0;
+                    MemRead_out=0;
+                    MemWrite_out=0;
+                    RegWrite_out=0;
+                    MemtoReg_out=0;
+                    write_data_out=0; 
+                    ALU_result_out = 0;
+                    branch_MUX_out=0;
+                    zero_out=0;
+                end
+
+        else if (clk==1)
+        begin
+            PC_out_out=PC_out;
+            rd_out=rd ;
+            write_data_out=write_data; 
+            MemRead_out=MemRead;
+            MemWrite_out=MemWrite;
+            RegWrite_out= RegWrite ;
+            MemtoReg_out=MemtoReg ;
+            ALU_result_out=ALU_result ;
+            branch_MUX_out=ALU_result ;
+            zero_out= zero;
+            branch_out=branch;  
+        end
+    end
+endmodule
+
+\end{lstlisting}
+
+\subsection*{Stage 4 - Memory Access (MEM)}
+
+The single module at this step is Data Memory, but it also serves as a register for sending back signals, so it checks to see if MemRead or MemWrite is high before carrying out the operation and setting the control lines to write data to or retrieve data from the memory. In order to handle data dangers, this also sends the register contents back to the Execution step for calculations. When the MemWrite signal is high, this register's primary function is to write data to the memory; when the MemRead signal is high, it reads data from the memory into the specified register. As a result, the MEM/WB transmits the register contents as well as additional control signals to the pipeline's final stage. The following stage is implemented into pipelining as follows;
+
+\begin{lstlisting}[caption={IF/ID Register}, captionpos=b, language=RISC-V]
+module MEM_WB(
+    input clk,
+    input reset,
+    input reg_write,
+    input memtoreg,
+    input [4:0] rd,
+    input [63:0] ALU_result,
+    input [63:0] read_data,
+    output reg reg_write_out,
+    output reg mem_to_reg_out,
+    output reg [4:0] rd_out,
+    output reg [63:0] ALU_result_out,
+    output reg [63:0] read_data_out 
+    );
+       
+    always @(posedge clk or reset)
+        begin
+            if (reset==1`b1)
+                begin
+                    rd_out = 0;
+                    ALU_result_out = 0;
+                    read_data_out = 0;
+                    reg_write_out= 0;
+                    mem_to_reg_out= 0;            	
+                end
+            else if (clk)
+                begin
+                    rd_out = rd;
+                    ALU_result_out = ALU_result;
+                    read_data_out = read_data;
+                    reg_write_out= reg_write;
+                    mem_to_reg_out= memtoreg;            	
+                end
+        end        
+endmodule
+\end{lstlisting}
+
+\subsection*{Forwarding Unit}
+Let us say we have to run an arbitrary set of instructions on the pipelined version of the processor. 
+
+\begin{lstlisting}[caption={IF/ID Register}, captionpos=b, language=RISC-V]
+add x1, x2, x3
+add x4, x1, x2
+\end{lstlisting}
+
+Our processor would now execute the first instruction without issue, but let's try to analyse the second instruction. The second instruction would be in the Instruction decoding stage when the first instruction would be in the execution stage, and as we have seen, this stage is also responsible for reading the values of the register. Therefore, when reading the values stored in the register, the value in x1 for the second instruction should be the sum of the values in x2 and x3. 
+
+We refer to this as a data risk. We have methods like forwarding and stalling to get around this. The latter of the two is the more effective, and that is precisely what we use in our processor. In order to avoid waiting for the value to be loaded into the register before reading from it, forwarding delivers the value immediately after it has been calculated in the execution stage and is required in the ID stage.
+
+A forwarding unit has been implemented in order to take care of hazards such as these. The following is the implementation of a forwarding unit in RISC-V. 
+
+\begin{lstlisting}[caption={IF/ID Register}, captionpos=b, language=RISC-V]
+module Forwarding_Unit(
+    input [4:0] ID_EX_Rs1,
+    input [4:0] ID_EX_Rs2,
+    input [4:0] EX_MEM_Rd,
+    input EX_MEM_RegWrite,
+    input [4:0] MEM_WB_Rd,
+    input MEM_WB_RegWrite,
+    output reg [1:0] Forward_A,
+    output reg [1:0] Forward_B
+    );
+    
+        always @(*)
+            begin
+            if (EX_MEM_RegWrite == 1 && EX_MEM_Rd == ID_EX_Rs1 && EX_MEM_Rd != 0)
+            begin
+                Forward_A = 2`b10;   //10
+            end
+        else if (MEM_WB_Rd == ID_EX_Rs1 && MEM_WB_RegWrite == 1 && MEM_WB_Rd != 0 &&
+                !(EX_MEM_RegWrite == 1 && EX_MEM_Rd != 0 && EX_MEM_Rd == ID_EX_Rs1))
+            begin
+                Forward_A = 2`b01;  //01
+            end
+        else
+
+            begin
+                Forward_A = 2`b00; //00
+            end
+
+        //FORWARD B LOGIC
+        if (EX_MEM_RegWrite == 1 && EX_MEM_Rd == ID_EX_Rs2 && EX_MEM_Rd != 0)
+            begin
+                Forward_B = 2`b10;   //10
+            end
+        else if (MEM_WB_Rd == ID_EX_Rs2 && MEM_WB_RegWrite == 1 && MEM_WB_Rd != 0 &&
+                !(EX_MEM_RegWrite == 1 && EX_MEM_Rd != 0 && EX_MEM_Rd == ID_EX_Rs2))
+            begin
+                Forward_B = 2`b01;  //01
+            end
+        else  
+            begin
+                Forward_B = 2`b00;  //00
+            end
+        end
+endmodule
+\end{lstlisting}
+
+Three scenarios should be taken into account for forwarding. The first one is EX Hazard, which sends the output of the preceding instruction to either of the ALU's inputs. The multiplexor will select the value from register EX/MEM if the previous instruction was intended to write to the register file and the write register number was equal to the read register number of ALU inputs A or B. As was noted before, in the event of data hazard, the result is occasionally required directly from the MEM stage since, on occasion, the result is saved many times in a single register. As a result, to obtain the most current one, we take it directly from the MEM stage.
+
+The forwarding logic for forwardA and forwardB is carried out according to the following table of conditions.
+\\ \\
+\includegraphics*[width = 12.5 cm]{forwardingconditions.png}
+
+\begin{lstlisting}[caption={IF/ID Register}, captionpos=b, language=RISC-V]
+module Four_MUX(
+    input [63:0] a, b, c, d, 
+    input [1:0] sel, 
+    output reg [63:0] mux_result
+    );
+    
+    always @(*)
+        begin
+          if (sel==2`b00)
+            mux_result=a;
+          else if (sel ==2`b01)
+            mux_result=b;
+          else if (sel==2`b10)
+            mux_result=c;
+          else if (sel==2`b11)
+            mux_result=d;    
+    end 
+endmodule
+\end{lstlisting}
+    
+\subsection*{Hazard Detection Unit}
+Hazard detection unit is an essential component of pipelined processors that helps to detect and resolve hazards that can occur due to the pipelining of instructions. It enables the processor to handle instruction dependencies and avoid pipeline stalls or data hazards, thereby improving the performance of the processor. The hazard detection unit is implemented in the following way in our processor.
+
+\begin{lstlisting}[caption={IF/ID Register}, captionpos=b, language=RISC-V]
+module Hazard_detection_Unit(
+    input [4:0] if_id_rs1,
+    input [4:0] if_id_rs2,
+    input [4:0] id_ex_rd,
+    input MemRead,
+    output reg muxcontrolbit,
+    output reg PC_Write,
+    output reg If_id_write
+    );
+    
+    always @(*)    
+    begin 
+        if ((if_id_rs2==id_ex_rd || if_id_rs1==id_ex_rd) &&  MemRead==1)
+        begin
+            muxcontrolbit=0;
+                PC_Write=0;         
+            If_id_write=0;
+        end
+        
+        else 
+        begin
+            muxcontrolbit=1;
+            PC_Write=1;
+            If_id_write=1;
+        end 
+        
+    end 
+    
+endmodule
+\end{lstlisting}
+
+The hazard detection unit takes in input signals if\_id\_rs1, if\_id\_rs2, id\_ex\_rd, and MemRead, and outputs three signals muxcontrolbit, PC\_Write, and If\_id\_write.
+
+The inputs if\_id\_rs1 and if\_id\_rs2 represent the two source registers of the instruction that was fetched in the previous cycle. The input id\_ex\_rd represents the destination register of the instruction that was decoded in the previous cycle. The input MemRead is a control signal that indicates whether the current instruction is a load instruction that reads data from memory.
+
+The hazard detection unit checks if any of the source registers of the current instruction match the destination register of the previous instruction, and whether the previous instruction was a load instruction that reads data from memory. If both conditions are true, then there is a data hazard, and the hazard detection unit sets the output signals accordingly. The muxcontrolbit output signal is set to 0, indicating that the multiplexer that selects the input to the register file should choose the result from the MEM/WB pipeline stage instead of the EX/MEM pipeline stage. The PC\_Write and If\_id\_write signals are set to 0, indicating that the current instruction should not update the program counter and the IF/ID pipeline register.
+
+If there is no data hazard, then the hazard detection unit sets the output signals to 1, indicating that the current instruction can proceed without any stall or data forwarding. The muxcontrolbit output signal is set to 1, indicating that the multiplexer should select the result from the EX/MEM pipeline stage. The PC\_Write and If\_id\_write signals are set to 1, indicating that the current instruction should update the program counter and the IF/ID pipeline register.
+
+\begin{lstlisting}[caption={IF/ID Register}, captionpos=b, language=RISC-V]
+module Hazard_detection_MUX(
+    input sel,
+    input branch,
+    input MemRead,
+    input MemtoReg,
+    input MemWrite,
+    input ALUsrc,
+    input RegWrite,
+    input [1:0] ALU_Op,
+    output reg branch_eq_hazard,
+    output reg MemRead_hazard,
+    output reg MemtoReg_hazard,
+    output reg MemWrite_hazard,
+    output reg ALUsrc_hazard,
+    output reg RegWrite_hazard,
+    output reg [1:0] ALU_Op_hazard
+    );
+
+    always @ (*)
+    begin
+        if (sel==0)
+        begin
+            branch_eq_hazard=0;
+            MemRead_hazard=0;
+            MemtoReg_hazard=0;
+            MemWrite_hazard=0;
+            ALUsrc_hazard=0;
+            RegWrite_hazard=0;
+            ALU_Op_hazard=0;
+        end 
+        if (sel==1)
+        begin
+            branch_eq_hazard=branch;
+            MemRead_hazard=MemRead;
+            MemtoReg_hazard=MemtoReg;
+            MemWrite_hazard=MemWrite;
+            ALUsrc_hazard=ALUsrc;
+            RegWrite_hazard=RegWrite;
+            ALU_Op_hazard=ALU_Op;
+            end 
+        
+    end 
+endmodule
+\end{lstlisting}
+
+The multiplexer selects between two sets of input signals based on the value of the sel input. The output signals branch\_eq\_hazard, MemRead\_hazard, MemtoReg\_hazard, MemWrite\_hazard, ALUsrc\_hazard, RegWrite\_hazard, and ALU\_Op\_hazard are set based on the selected input signals.
+
+The input signals to the hazard detection unit are branch, MemRead, MemtoReg, MemWrite, ALUsrc, RegWrite, and ALU\_Op. These signals represent various control signals that determine how an instruction should be executed.
+
+The first set of input signals is selected when the sel input is 0. In this case, all the output signals are set to 0, indicating that there is no hazard. This is the default state of the hazard detection unit.
+
+The second set of input signals is selected when the sel input is 1. In this case, the output signals are set based on the input signals. The branch\_eq\_hazard output signal is set to the value of the branch input, indicating that there is a branch hazard if the branch input is asserted. The MemRead\_hazard output signal is set to the value of the MemRead input, indicating that there is a memory read hazard if the MemRead input is asserted. The MemtoReg\_hazard output signal is set to the value of the MemtoReg input, indicating that there is a memory-to-register hazard if the MemtoReg input is asserted. The MemWrite\_hazard output signal is set to the value of the MemWrite input, indicating that there is a memory write hazard if the MemWrite input is asserted. The ALUsrc\_hazard output signal is set to the value of the ALUsrc input, indicating that there is an ALU source hazard if the ALUsrc input is asserted. The RegWrite\_hazard output signal is set to the value of the RegWrite input, indicating that there is a register write hazard if the RegWrite input is asserted. The ALU\_Op\_hazard output signal is set to the value of the ALU\_Op input, indicating that there is an ALU operation hazard if the ALU\_Op input is asserted.
+
+\section{Results}
+We will now test our final design. We will check if the pipelined processor is working as intended. 
+\\ \\
+\includegraphics*[width = 13 cm]{loadingvalues.jpeg}
+\\
+Firstly, checking if the values are being loaded into the processor correctly. 
+\\
+\includegraphics*[width = 13 cm]{firstsorting.jpeg}
+\\ \\
+Checking if the sorting is working correctly and the following is our final sorted result. 
+\\ \\
+\includegraphics*[width = 13 cm]{final_sorted.jpeg}
+This is our final sorted result.
+
+The final thing is to check if the forwarding is working correctly according to the conditions put in place for the forwarding unit to work correctly.
+\\ \\
+\includegraphics*[width = 13 cm]{forwarding.jpeg}
+
+\section{Github Repository}
+
+\href{https://github.com/HammadxSaj/CA-Project}{https://github.com/HammadxSaj/CA-Project}
 \end{document}
+ 
