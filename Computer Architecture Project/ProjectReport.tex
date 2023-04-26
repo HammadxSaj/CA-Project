@@ -58,7 +58,11 @@
 \tableofcontents
 \newpage
 
-\section{Sorting Algorithm on a Single Cycle Processor}
+\section{Introduction}
+The purpose of this project is to design a 5-stage pipelined processor to execute a single array sorting algorithm. We will be converting our single cycle processor to a pipelined one. The processor is designed in Verilog HDL and the sorting algorithm is written in RISC-V assembly language. The processor is first executed using single cycle processor, it is then implemented by adding in pipelining to the processor to increase efficiency in our processor. The report is divided according to each task that we had to implement according to the project rubrics. 
+
+
+\section{Task 1 - Sorting Algorithm on a Single Cycle Processor}
 \subsection{Selection Sort Assembly Code} 
 \begin{lstlisting}[caption={Selection Sort Assembly code}, captionpos=b, language=RISC-V]
 addi x11, x0, 6 #an arbitrary value to append in array
@@ -158,6 +162,8 @@ for ind in range(size):
     (array[ind], array[min_index]) = (array[min_index], array[ind])    
 \end{lstlisting}
 
+\newpage
+
 \subsection{Selection Sort on Venus Simulator}
 
 \begin{figure}[h]
@@ -175,9 +181,9 @@ for ind in range(size):
 \end{figure}
 
 % \section{Single Cycle Processor for BLT instruction - Changes}
+\newpage
 
-
-\section*{Introducing Pipeline Stages}
+\section{Task 2 - Introducing Pipeline Stages}
 
 A difficulty with implementation of single cycle processor is that the processor only executes one instruction at a time, and only after that instruction is finished is execution of the subsequent instruction begins, which is counter-productive. This was demonstrated in the previous section using a single cycle processor that could do a Selection sort. Given that the majority of the components in our processors would remain idle, it is immediately clear how wasteful this would be and how much processing power it would waste. This is why, in this section, we'll try to fix it by adding pipelining to our single-cycle processor.
 
@@ -249,7 +255,7 @@ Before sending everything to the IF/ID register, which on the subsequent clock c
 
 Our pipeline's second step is responsible for decoding the instruction, reading from registers, and writing to registers. Therefore, it begins by having the IF stage fetch the instruction. Once the 32-bit instruction has been decoded and its opcode, rd, rs1, and rs2 have been determined, it is then passed on to the instruction parser and the data extractor module. The RegisterFile then reads the contents of the registers or writes back to them (Note that writing back requires signals from the MEM/WEB register, indicating that it is a right-to-left operation, but it doesn't interrupt programme flow).
 
-\begin{lstlisting}[caption={IF/ID Register}, captionpos=b, language=RISC-V]
+\begin{lstlisting}[caption={ID/EX Register}, captionpos=b, language=RISC-V]
 module ID_EX(
     input clk,
     input reset,
@@ -329,7 +335,7 @@ The third stage of our pipeline is the execution stage. This stage is responsibl
 
 The value that is to be sent to the registers is controlled by the two MUX after we obtained the ALUop from the Instruction Decode register, which is the control line for the ALU. We now shift our focus as to what exactly is the Execution stage carrying out. 
 
-\begin{lstlisting}[caption={IF/ID Register}, captionpos=b, language=RISC-V]
+\begin{lstlisting}[caption={EX/MEM Register}, captionpos=b, language=RISC-V]
 module EX_MEM(
     input clk, reset,
     input [4:0] rd,
@@ -385,7 +391,7 @@ endmodule
 
 The single module at this step is Data Memory, but it also serves as a register for sending back signals, so it checks to see if MemRead or MemWrite is high before carrying out the operation and setting the control lines to write data to or retrieve data from the memory. In order to handle data dangers, this also sends the register contents back to the Execution step for calculations. When the MemWrite signal is high, this register's primary function is to write data to the memory; when the MemRead signal is high, it reads data from the memory into the specified register. As a result, the MEM/WB transmits the register contents as well as additional control signals to the pipeline's final stage. The following stage is implemented into pipelining as follows;
 
-\begin{lstlisting}[caption={IF/ID Register}, captionpos=b, language=RISC-V]
+\begin{lstlisting}[caption={MEM/WB Register}, captionpos=b, language=RISC-V]
 module MEM_WB(
     input clk,
     input reset,
