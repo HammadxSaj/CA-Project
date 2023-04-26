@@ -432,7 +432,7 @@ endmodule
 \subsection*{Forwarding Unit}
 Let us say we have to run an arbitrary set of instructions on the pipelined version of the processor. 
 
-\begin{lstlisting}[caption={IF/ID Register}, captionpos=b, language=RISC-V]
+\begin{lstlisting}[caption={Arbitrary Set of instructions}, captionpos=b, language=RISC-V]
 add x1, x2, x3
 add x4, x1, x2
 \end{lstlisting}
@@ -443,7 +443,7 @@ We refer to this as a data risk. We have methods like forwarding and stalling to
 
 A forwarding unit has been implemented in order to take care of hazards such as these. The following is the implementation of a forwarding unit in RISC-V. 
 
-\begin{lstlisting}[caption={IF/ID Register}, captionpos=b, language=RISC-V]
+\begin{lstlisting}[caption={Forwarding Unit}, captionpos=b, language=RISC-V]
 module Forwarding_Unit(
     input [4:0] ID_EX_Rs1,
     input [4:0] ID_EX_Rs2,
@@ -496,7 +496,7 @@ The forwarding logic for forwardA and forwardB is carried out according to the f
 \\ \\
 \includegraphics*[width = 12.5 cm]{forwardingconditions.png}
 
-\begin{lstlisting}[caption={IF/ID Register}, captionpos=b, language=RISC-V]
+\begin{lstlisting}[caption={Four MUX}, captionpos=b, language=RISC-V]
 module Four_MUX(
     input [63:0] a, b, c, d, 
     input [1:0] sel, 
@@ -520,7 +520,7 @@ endmodule
 \subsection*{Hazard Detection Unit}
 Hazard detection unit is an essential component of pipelined processors that helps to detect and resolve hazards that can occur due to the pipelining of instructions. It enables the processor to handle instruction dependencies and avoid pipeline stalls or data hazards, thereby improving the performance of the processor. The hazard detection unit is implemented in the following way in our processor.
 
-\begin{lstlisting}[caption={IF/ID Register}, captionpos=b, language=RISC-V]
+\begin{lstlisting}[caption={Hazard Detection Unit}, captionpos=b, language=RISC-V]
 module Hazard_detection_Unit(
     input [4:0] if_id_rs1,
     input [4:0] if_id_rs2,
@@ -560,7 +560,7 @@ The hazard detection unit checks if any of the source registers of the current i
 
 If there is no data hazard, then the hazard detection unit sets the output signals to 1, indicating that the current instruction can proceed without any stall or data forwarding. The muxcontrolbit output signal is set to 1, indicating that the multiplexer should select the result from the EX/MEM pipeline stage. The PC\_Write and If\_id\_write signals are set to 1, indicating that the current instruction should update the program counter and the IF/ID pipeline register.
 
-\begin{lstlisting}[caption={IF/ID Register}, captionpos=b, language=RISC-V]
+\begin{lstlisting}[caption={Hazard Detection MUX}, captionpos=b, language=RISC-V]
 module Hazard_detection_MUX(
     input sel,
     input branch,
@@ -616,21 +616,44 @@ The second set of input signals is selected when the sel input is 1. In this cas
 
 \section{Results}
 We will now test our final design. We will check if the pipelined processor is working as intended. 
-\\ \\
-\includegraphics*[width = 13 cm]{loadingvalues.jpeg}
-\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[width = 13 cm]{loadingvalues.jpeg}
+    \caption{Loading the set of inputs}
+    \label{fig: label 1}
+\end{figure}
+
 Firstly, checking if the values are being loaded into the processor correctly. 
-\\
-\includegraphics*[width = 13 cm]{firstsorting.jpeg}
-\\ \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[width = 13 cm]{firstsorting.jpeg}
+    \caption{Sorting the set of inputs}
+    \label{fig: label 2}
+\end{figure}
+
 Checking if the sorting is working correctly and the following is our final sorted result. 
-\\ \\
-\includegraphics*[width = 13 cm]{final_sorted.jpeg}
-This is our final sorted result.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[width = 13 cm]{final_sorted.jpeg}
+    \caption{Final Sorted set of elements}
+    \label{fig: label 3}
+\end{figure}
+
+\newpage
 
 The final thing is to check if the forwarding is working correctly according to the conditions put in place for the forwarding unit to work correctly.
-\\ \\
-\includegraphics*[width = 13 cm]{forwarding.jpeg}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[width = 13 cm]{forwarding.jpeg}
+    \caption{Result of Forwarding Unit}
+    \label{fig: label 4}
+\end{figure}
+
+\section{Final Comments}
 
 \section{Github Repository}
 
