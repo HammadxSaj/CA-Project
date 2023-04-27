@@ -1147,8 +1147,16 @@ The final thing is to check if the forwarding is working correctly according to 
     \label{fig: label 4}
 \end{figure}
 
+\subsection{Comparison between Pipelined and non-Pipelined Single Cycle Processor}
+
+Performance for a pipelined Single-cycle processor will be better when compared to a non-pipelined single cycle processor. A pipelined processor and a non-pipelined processor are both single processors, but they differ in how they handle instructions.
+
+A non-pipelined processor executes each instruction in a sequential manner, meaning it completes one instruction before moving on to the next. This can lead to inefficiencies because there may be unused portions of the processor during the execution of an instruction. On the other hand, a pipelined processor breaks down the execution of each instruction into several stages and allows multiple instructions to be processed at the same time. As a result, there is no idle time for the processor, and instructions are executed more quickly.
+
+A pipelined processor is generally faster and more efficient than a non-pipelined processor because it can process instructions simultaneously and this is exactly what we have seen over the course of this semester and the project. However, while designing a pipelined single-cycle processor, one has to keep in mind to not add bottlenecks and add remedies to data hazards for the processor to work efficiently.
+
 \section{Final Comments}
-Branching has not been implemented properly in the project. 
+The project has been a unique challenge in a way that it required tedious amounts of debugging the code and modules to figure out what the problem is. At times even after hours of trying to figure out the problem, we could not reach to a correct conclusion. As a result, branching has not been implemented properly in our project, while forwarding unit and hazard detection is working. The failure to implement branching correctly is not down to a lack of effort and time, but guessing it is rather down to a very small error which is not visible to the eye. 
 
 
 \section{Github Repository}
