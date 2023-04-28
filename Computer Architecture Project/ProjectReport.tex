@@ -887,8 +887,6 @@ Checking if the sorting is working correctly and the following is our final sort
     \label{fig: label 3}
 \end{figure}
 
-\newpage
-
 The final thing is to check if the forwarding is working correctly according to the conditions put in place for the forwarding unit to work correctly.
 
 \begin{figure}[h]
@@ -900,22 +898,21 @@ The final thing is to check if the forwarding is working correctly according to 
 
 \begin{figure}[h]
     \centering
-    \includegraphics*[width = 13 cm]{hazarddetectionfinalsorted.jpeg}
+    \includegraphics*[width = 10 cm]{hazarddetectionfinalsorted.jpeg}
     \caption{Hazard detection final sorted}
     \label{fig: label 5}
 \end{figure}
 
-
 \begin{figure}[h]
     \centering
-    \includegraphics*[width = 13 cm]{stallingfinalsorted.jpeg}
+    \includegraphics*[width = 10 cm]{stallingfinalsorted.jpeg}
     \caption{Stalling final sorted}
     \label{fig: label 6}
 \end{figure}
 
-\newpage
+When stalling occurs, instruction becomes zero which is the no operation instruction. This is because the instruction is not being executed and is being stalled. As a result of this, RS and RD also becomes zero. The control signals are also set to zero. The control bit is the bit which signifies stalling.
 
-\subsection{Comparison between Pipelined and non-Pipelined Single Cycle Processor}
+\section{Comparison between Pipelined and non-Pipelined Single Cycle Processor}
 
 Performance for a pipelined Single-cycle processor will be better when compared to a non-pipelined single cycle processor. A pipelined processor and a non-pipelined processor are both single processors, but they differ in how they handle instructions.
 
@@ -925,6 +922,7 @@ A pipelined processor is generally faster and more efficient than a non-pipeline
 
 In a non-pipelined single cycle processor, the sorting takes place in 18340000 ns, while in a pipelined single cycle processor, the sorting takes place in 623000 ns. This is a significant improvement in the performance of the processor and this happens precisely because of the reasons explained earlier in this
 
+
 \section{Final Comments}
 The project has been a unique challenge in a way that it required tedious amounts of debugging the code and modules to figure out what the problem is. At times even after hours of trying to figure out the problem, we could not reach to a correct conclusion. As a result, branching has not been implemented properly in our project, while forwarding unit and hazard detection is working. The failure to implement branching correctly is not down to a lack of effort and time, but guessing it is rather down to a very small error which is not visible to the eye. 
 
@@ -932,5 +930,7 @@ The project has been a unique challenge in a way that it required tedious amount
 \section{Github Repository}
 
 \href{https://github.com/HammadxSaj/CA-Project}{https://github.com/HammadxSaj/CA-Project}
+
 \end{document}
  
+
