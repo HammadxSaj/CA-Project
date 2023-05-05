@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri May  5 23:17:21 2023
+# Process ID: 22952
+# Current directory: D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9352 D:\Universty Files\NON-PIPELINED WORKING FIN(10)\project_5\project_5.xpr
+# Log file: D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/vivado.log
+# Journal file: D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.xpr}
+update_compile_order -fileset sources_1
+launch_simulation
+source risc5tb.tcl
+run all
+add_bp {D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Adder.v} 12
+remove_bps -file {D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Adder.v} -line 12
+add_bp {D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Adder.v} 12
+remove_bps -file {D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Adder.v} -line 12

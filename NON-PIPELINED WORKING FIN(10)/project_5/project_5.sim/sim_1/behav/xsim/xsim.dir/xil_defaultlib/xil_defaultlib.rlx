@@ -1,0 +1,18 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
+D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.srcs/sim_1/new/risc5tb.v,1681234062,verilog,,,,risc5tb,,,,,,,,
+D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.srcs/sources_1/new/risc5processor.v,1681212318,verilog,,D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.srcs/sim_1/new/risc5tb.v,,risc5processor,,,,,,,,
+D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/ImmGen.v,1682536159,verilog,,D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/InsParser.v,,ImmGen,,,,,,,,
+D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/InsParser.v,1682536159,verilog,,D:/Universty Files/Solution 5,6,7,8,9,10/CALab08/Instruction_Memory.v,,InsParser,,,,,,,,
+D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/Mux.v,1682536408,verilog,,D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Program_Counter.v,,Mux,,,,,,,,
+D:/Universty Files/Solution 5,6,7,8,9,10/CALab06/ALU_64_bit.v,1682536408,verilog,,D:/Universty Files/Solution 5,6,7,8,9,10/CALab10/ALU_Control.v,,ALU_64_bit,,,,,,,,
+D:/Universty Files/Solution 5,6,7,8,9,10/CALab07/registerFile.v,1682536159,verilog,,D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.srcs/sources_1/new/risc5processor.v,,registerFile,,,,,,,,
+D:/Universty Files/Solution 5,6,7,8,9,10/CALab08/Data_Memory.v,1681467208,verilog,,D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/ImmGen.v,,Data_Memory,,,,,,,,
+D:/Universty Files/Solution 5,6,7,8,9,10/CALab08/Instruction_Memory.v,1683310756,verilog,,D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/Mux.v,,Instruction_Memory,,,,,,,,
+D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Adder.v,1682536159,verilog,,D:/Universty Files/Solution 5,6,7,8,9,10/CALab10/Control_Unit.v,,Adder,,,,,,,,
+D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Program_Counter.v,1683281277,verilog,,D:/Universty Files/Solution 5,6,7,8,9,10/CALab07/registerFile.v,,Program_Counter,,,,,,,,
+D:/Universty Files/Solution 5,6,7,8,9,10/CALab10/ALU_Control.v,1682535824,verilog,,D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Adder.v,,ALU_Control,,,,,,,,
+D:/Universty Files/Solution 5,6,7,8,9,10/CALab10/Control_Unit.v,1682536159,verilog,,D:/Universty Files/Solution 5,6,7,8,9,10/CALab08/Data_Memory.v,,Control_Unit,,,,,,,,
