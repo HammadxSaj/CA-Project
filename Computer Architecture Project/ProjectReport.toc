@@ -1,0 +1,26 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Task 1 - Sorting Algorithm on a Single Cycle Processor}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Selection Sort Assembly Code}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Selection Sort Python Code}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Selection Sort on Venus Simulator}{6}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Changes to Single Cycle Processor}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Changes to Control Unit}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Changes to ALU Control Unit}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Changes to ALU}{10}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Data Memory}{11}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Instruction Memory}{13}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Results for Single Cycle Pipeline}{18}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Task 2 - Introducing Pipeline Stages}{19}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Stage 1 - Instruction Fetch (IF)}{20}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Stage 2 - Instruction Decode (ID)}{21}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Stage 3 - Execution (EX)}{22}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Stage 4 - Memory Access (MEM)}{24}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Task 3 - Circuitry to Detect Hazards}{25}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Forwarding Unit}{25}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Result for the Forwarding Unit}{27}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Hazard Detection Unit}{28}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Result for the Hazard Detection unit}{31}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Comparison between Pipelined and non-Pipelined Single Cycle Processor}{32}{section.6}%
+\contentsline {section}{\numberline {7}Task Division}{34}{section.7}%
+\contentsline {section}{\numberline {8}Final Comments}{34}{section.8}%
+\contentsline {section}{\numberline {9}Github Repository}{34}{section.9}%
