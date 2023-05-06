@@ -1,0 +1,247 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Wed Apr 26 23:02:00 2023
+# Process ID: 17748
+# Current directory: D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3004 D:\Universty Files\NON-PIPELINED WORKING FIN(10)\project_5\project_5.xpr
+# Log file: D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/vivado.log
+# Journal file: D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.xpr}
+INFO: [Project 1-313] Project file moved from 'D:/Universty Files/project_5' since last save.
+WARNING: [Project 1-312] File not found as 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/Solution 5,6,7,8,9,10/CALab06/ALU_64_bit.v'; using path 'D:/Universty Files/Solution 5,6,7,8,9,10/CALab06/ALU_64_bit.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/Solution 5,6,7,8,9,10/CALab10/ALU_Control.v'; using path 'D:/Universty Files/Solution 5,6,7,8,9,10/CALab10/ALU_Control.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/Solution 5,6,7,8,9,10/CALab09/Adder.v'; using path 'D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Adder.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/Solution 5,6,7,8,9,10/CALab10/Control_Unit.v'; using path 'D:/Universty Files/Solution 5,6,7,8,9,10/CALab10/Control_Unit.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/Solution 5,6,7,8,9,10/CALab08/Data_Memory.v'; using path 'D:/Universty Files/Solution 5,6,7,8,9,10/CALab08/Data_Memory.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/Solution 5,6,7,8,9,10/CALab05/ImmGen.v'; using path 'D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/ImmGen.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/Solution 5,6,7,8,9,10/CALab05/InsParser.v'; using path 'D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/InsParser.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/Solution 5,6,7,8,9,10/CALab08/Instruction_Memory.v'; using path 'D:/Universty Files/Solution 5,6,7,8,9,10/CALab08/Instruction_Memory.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/Solution 5,6,7,8,9,10/CALab05/Mux.v'; using path 'D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/Mux.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/Solution 5,6,7,8,9,10/CALab09/Program_Counter.v'; using path 'D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Program_Counter.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/Solution 5,6,7,8,9,10/CALab07/registerFile.v'; using path 'D:/Universty Files/Solution 5,6,7,8,9,10/CALab07/registerFile.v' instead.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
+open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:10 . Memory (MB): peak = 1012.746 ; gain = 0.000
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'risc5tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj risc5tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab06/ALU_64_bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_64_bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab10/ALU_Control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_Control
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab10/Control_Unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Control_Unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab08/Data_Memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_Memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/ImmGen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ImmGen
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/InsParser.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InsParser
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab08/Instruction_Memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Instruction_Memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/Mux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Program_Counter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Program_Counter
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab07/registerFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module registerFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.srcs/sources_1/new/risc5processor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module risc5processor
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.srcs/sim_1/new/risc5tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module risc5tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.sim/sim_1/behav/xsim'
+"xelab -wto df33b2d6ad0340e68978812557eba9dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot risc5tb_behav xil_defaultlib.risc5tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto df33b2d6ad0340e68978812557eba9dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot risc5tb_behav xil_defaultlib.risc5tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 1 for port 'Zero' [D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.srcs/sources_1/new/risc5processor.v:71]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Program_Counter.v" Line 1. Module Program_Counter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Adder.v" Line 1. Module Adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab08/Instruction_Memory.v" Line 1. Module Instruction_Memory doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/InsParser.v" Line 1. Module InsParser doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab10/Control_Unit.v" Line 1. Module Control_Unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab07/registerFile.v" Line 1. Module registerFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/ImmGen.v" Line 1. Module ImmGen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab10/ALU_Control.v" Line 1. Module ALU_Control doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/Mux.v" Line 1. Module Mux doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab06/ALU_64_bit.v" Line 1. Module ALU_64_bit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab08/Data_Memory.v" Line 1. Module Data_Memory doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/Mux.v" Line 1. Module Mux doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Adder.v" Line 1. Module Adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/Mux.v" Line 1. Module Mux doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Program_Counter.v" Line 1. Module Program_Counter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Adder.v" Line 1. Module Adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab08/Instruction_Memory.v" Line 1. Module Instruction_Memory doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/InsParser.v" Line 1. Module InsParser doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab10/Control_Unit.v" Line 1. Module Control_Unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab07/registerFile.v" Line 1. Module registerFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/ImmGen.v" Line 1. Module ImmGen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab10/ALU_Control.v" Line 1. Module ALU_Control doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/Mux.v" Line 1. Module Mux doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab06/ALU_64_bit.v" Line 1. Module ALU_64_bit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab08/Data_Memory.v" Line 1. Module Data_Memory doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/Mux.v" Line 1. Module Mux doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Adder.v" Line 1. Module Adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/Mux.v" Line 1. Module Mux doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Program_Counter
+Compiling module xil_defaultlib.Adder
+Compiling module xil_defaultlib.Instruction_Memory
+Compiling module xil_defaultlib.InsParser
+Compiling module xil_defaultlib.Control_Unit
+Compiling module xil_defaultlib.registerFile
+Compiling module xil_defaultlib.ImmGen
+Compiling module xil_defaultlib.ALU_Control
+Compiling module xil_defaultlib.Mux
+Compiling module xil_defaultlib.ALU_64_bit
+Compiling module xil_defaultlib.Data_Memory
+Compiling module xil_defaultlib.risc5processor
+Compiling module xil_defaultlib.risc5tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot risc5tb_behav
+/project_5/project_5.sim/sim_1/behav/xsim/xsim.dir/risc5tb_behav/webtalk/xsim_webtalk.tcl was unexpected at this time.
+run_program: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1012.746 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "risc5tb_behav -key {Behavioral:sim_1:Functional:risc5tb} -tclbatch {risc5tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source risc5tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+xsim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 1012.746 ; gain = 0.000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'risc5tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1012.746 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1012.746 ; gain = 0.000
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'risc5tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj risc5tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab06/ALU_64_bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_64_bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab10/ALU_Control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_Control
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab10/Control_Unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Control_Unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab08/Data_Memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_Memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/ImmGen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ImmGen
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/InsParser.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InsParser
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab08/Instruction_Memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Instruction_Memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab05/Mux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Program_Counter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Program_Counter
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Universty Files/Solution 5,6,7,8,9,10/CALab07/registerFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module registerFile
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.sim/sim_1/behav/xsim'
+"xelab -wto df33b2d6ad0340e68978812557eba9dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot risc5tb_behav xil_defaultlib.risc5tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto df33b2d6ad0340e68978812557eba9dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot risc5tb_behav xil_defaultlib.risc5tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Program_Counter
+Compiling module xil_defaultlib.Adder
+Compiling module xil_defaultlib.Instruction_Memory
+Compiling module xil_defaultlib.InsParser
+Compiling module xil_defaultlib.Control_Unit
+Compiling module xil_defaultlib.registerFile
+Compiling module xil_defaultlib.ImmGen
+Compiling module xil_defaultlib.ALU_Control
+Compiling module xil_defaultlib.Mux
+Compiling module xil_defaultlib.ALU_64_bit
+Compiling module xil_defaultlib.Data_Memory
+Compiling module xil_defaultlib.risc5processor
+Compiling module xil_defaultlib.risc5tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot risc5tb_behav
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1012.746 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "risc5tb_behav -key {Behavioral:sim_1:Functional:risc5tb} -tclbatch {risc5tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source risc5tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+xsim: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 1012.746 ; gain = 0.000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'risc5tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 1012.746 ; gain = 0.000
+run all
+run: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1012.746 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 27 20:19:46 2023...

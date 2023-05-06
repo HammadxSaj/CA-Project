@@ -1,0 +1,752 @@
+/*
+
+Xilinx Vivado v2020.1 (64-bit) [Major: 2020, Minor: 1]
+SW Build: 2902540 on Wed May 27 19:54:49 MDT 2020
+IP Build: 2902112 on Wed May 27 22:43:36 MDT 2020
+
+Process ID (PID): 22952
+License: Customer
+
+Current time: 	Fri May 05 23:17:50 PKT 2023
+Time zone: 	Pakistan Standard Time (Asia/Karachi)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 125
+Available screens: 1
+Default font: family=Segoe UI,name=Segoe UI,style=plain,size=15
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2020.1/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2020.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	Hammad Sajid
+User home directory: C:/Users/Hammad Sajid
+User working directory: D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2020.1
+RDI_DATADIR: C:/Xilinx/Vivado/2020.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2020.1/bin
+
+Vivado preferences file location: C:/Users/Hammad Sajid/AppData/Roaming/Xilinx/Vivado/2020.1/vivado.xml
+Vivado preferences directory: C:/Users/Hammad Sajid/AppData/Roaming/Xilinx/Vivado/2020.1/
+Vivado layouts directory: C:/Users/Hammad Sajid/AppData/Roaming/Xilinx/Vivado/2020.1/data/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2020.1/lib/classes/planAhead.jar
+Vivado log file location: 	D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/vivado.log
+Vivado journal file location: 	D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/vivado.jou
+Engine tmp dir: 	D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/.Xil/Vivado-22952-Hammad
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2020.1/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2020.1/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2020.1
+XILINX_VIVADO: C:/Xilinx/Vivado/2020.1
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2020.1
+
+
+GUI allocated memory:	198 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,005 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// WARNING: HEventQueue.dispatchEvent() is taking  1023 ms.
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bz (cs):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// Tcl Message: open_project {D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.xpr} 
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project {D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 122 MB (+125293kb) [00:00:23]
+// [Engine Memory]: 1,005 MB (+902752kb) [00:00:23]
+// WARNING: HEventQueue.dispatchEvent() is taking  6643 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 59 MB. Current time: 5/5/23, 11:17:58 PM PKT
+// Tcl Message: open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:09 . Memory (MB): peak = 1013.086 ; gain = 0.000 
+// Project name: project_5; location: D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5; part: xc7a35tcpg236-1
+dismissDialog("Open Project"); // bz (cs)
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 10 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v)]", 1); // B (F, cs)
+// PAPropertyPanels.initPanels (Program_Counter.v) elapsed time: 0.3s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), pc : Program_Counter (Program_Counter.v)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), pc : Program_Counter (Program_Counter.v)]", 2, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Elapsed time: 27 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), insmem : Instruction_Memory (Instruction_Memory.v)]", 4, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), insmem : Instruction_Memory (Instruction_Memory.v)]", 4, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Elapsed time: 29 seconds
+selectCodeEditor("Instruction_Memory.v", 178, 224); // bP (w, cs)
+typeControlKey((HResource) null, "Instruction_Memory.v", 'v'); // bP (w, cs)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (J, cs)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (J, cs)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ai (ao, cs)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// am (cs): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a (am)
+// bz (cs):  Save Constraints : addNotify
+// e (cs):  Run Simulation : addNotify
+dismissDialog("Save Project"); // am (cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: LAUNCH_SIM
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'risc5tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design 
+// Tcl Message: INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvlog --incr --relax -prj risc5tb_vlog.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '4' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab -wto df33b2d6ad0340e68978812557eba9dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot risc5tb_behav xil_defaultlib.risc5tb xil_defaultlib.glbl -log elaborate.log" 
+// TclEventType: LAUNCH_SIM
+// [GUI Memory]: 133 MB (+5281kb) [00:02:03]
+// TclEventType: LOAD_FEATURE
+// Tcl Message: Built simulation snapshot risc5tb_behav /project_5/project_5.sim/sim_1/behav/xsim/xsim.dir/risc5tb_behav/webtalk/xsim_webtalk.tcl was unexpected at this time. 
+// Tcl Message: run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1013.086 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Universty Files/NON-PIPELINED WORKING FIN(10)/project_5/project_5.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "risc5tb_behav -key {Behavioral:sim_1:Functional:risc5tb} -tclbatch {risc5tb.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2020.1 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// [GUI Memory]: 141 MB (+1618kb) [00:02:08]
+// WARNING: HEventQueue.dispatchEvent() is taking  2862 ms.
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Elapsed time: 21 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: source risc5tb.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 83 MB. Current time: 5/5/23, 11:19:40 PM PKT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: # run 1000ns 
+// Tcl Message: xsim: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 1013.086 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'risc5tb_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 1013.086 ; gain = 0.000 
+// 'd' command handler elapsed time: 27 seconds
+dismissDialog("Run Simulation"); // e (cs)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 84 MB. Current time: 5/5/23, 11:19:44 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 83 MB. Current time: 5/5/23, 11:19:45 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:19:47 PM PKT
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // N (aI, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResource.WaveformView_GOTO_TIME_0, "Waveform Viewer_RunReset"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 269ms to process. Increasing delay to 2000 ms.
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN_ALL, "simulation_live_run_all"); // E (g, cs)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN_ALL
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// Tcl Message: run all 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_LIVE_BREAK, "simulation_live_break"); // E (g, cs)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_LIVE_BREAK
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_STOPPED
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1013.086 ; gain = 0.000 
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 1", 2); // m (l, cs)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:19:59 PM PKT
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:19:59 PM PKT
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:00 PM PKT
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:01 PM PKT
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 86 MB. Current time: 5/5/23, 11:20:02 PM PKT
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:05 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:05 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:09 PM PKT
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 87 MB. Current time: 5/5/23, 11:20:10 PM PKT
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 86 MB. Current time: 5/5/23, 11:20:11 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:11 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:12 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:13 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:13 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:14 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:14 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:16 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:17 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:18 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:18 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:19 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:20 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:24 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:25 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 107 MB. Current time: 5/5/23, 11:20:27 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 102 MB. Current time: 5/5/23, 11:20:27 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:27 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:28 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:28 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:29 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:29 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:30 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 90 MB. Current time: 5/5/23, 11:20:30 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:30 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:31 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:31 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:32 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:33 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// WARNING: HEventQueue.dispatchEvent() is taking  1113 ms.
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// WARNING: HEventQueue.dispatchEvent() is taking  1428 ms.
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:37 PM PKT
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Elapsed time: 27 seconds
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:37 PM PKT
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:39 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:42 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:44 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:45 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:45 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:46 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:47 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:48 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:49 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:49 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:50 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:50 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:51 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:51 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:52 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:52 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:53 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:53 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:54 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 98 MB. Current time: 5/5/23, 11:20:54 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:55 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:55 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:56 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:56 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:57 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:58 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:58 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:59 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:20:59 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:21:00 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 19 seconds
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:21:02 PM PKT
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:21:02 PM PKT
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:21:09 PM PKT
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (g, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:21:10 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 85 MB. Current time: 5/5/23, 11:21:17 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 86 MB. Current time: 5/5/23, 11:21:19 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 86 MB. Current time: 5/5/23, 11:21:20 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 86 MB. Current time: 5/5/23, 11:21:22 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 86 MB. Current time: 5/5/23, 11:21:24 PM PKT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 86 MB. Current time: 5/5/23, 11:21:26 PM PKT
+// Elapsed time: 13 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 917, 446); // n (o, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Elapsed time: 64 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Program_Counter.v", 0); // m (l, cs)
+unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // aA
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), insmem : Instruction_Memory (Instruction_Memory.v)]", 4, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), insmem : Instruction_Memory (Instruction_Memory.v)]", 4, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cs)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // af (cs)
+selectMenu(PAResourceItoN.MainMenuMgr_SIMULATION_WAVEFORM, "Simulation Waveform"); // af (cs)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cs)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cs)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // af (cs)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cs)
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 463ms to process. Increasing delay to 3000 ms.
+// Elapsed time: 419 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v)]", 1, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v)]", 1, true, false, false, false, false, true); // B (F, cs) - Double Click - Node
+typeControlKey((HResource) null, "risc5processor.v", 'c'); // bP (w, cs)
+// Elapsed time: 20 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v)]", 1); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), pc : Program_Counter (Program_Counter.v)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), pc : Program_Counter (Program_Counter.v)]", 2, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("Program_Counter.v", 205, 8); // bP (w, cs)
+typeControlKey((HResource) null, "Program_Counter.v", 'c'); // bP (w, cs)
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), add1 : Adder (Adder.v)]", 3, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), add1 : Adder (Adder.v)]", 3, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("Adder.v", 110, 57); // bP (w, cs)
+typeControlKey((HResource) null, "Adder.v", 'c'); // bP (w, cs)
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), insmem : Instruction_Memory (Instruction_Memory.v)]", 4, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), insmem : Instruction_Memory (Instruction_Memory.v)]", 4, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("Instruction_Memory.v", 231, 35); // bP (w, cs)
+typeControlKey((HResource) null, "Instruction_Memory.v", 'c'); // bP (w, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), inspar : InsParser (InsParser.v)]", 5, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), inspar : InsParser (InsParser.v)]", 5, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("InsParser.v", 235, 49); // bP (w, cs)
+typeControlKey((HResource) null, "InsParser.v", 'c'); // bP (w, cs)
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), conunit : Control_Unit (Control_Unit.v)]", 6, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), conunit : Control_Unit (Control_Unit.v)]", 6, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("Control_Unit.v", 177, 52); // bP (w, cs)
+typeControlKey((HResource) null, "Control_Unit.v", 'c'); // bP (w, cs)
+// Elapsed time: 445 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), regf : registerFile (registerFile.v)]", 7, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), regf : registerFile (registerFile.v)]", 7, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("registerFile.v", 177, 43); // bP (w, cs)
+selectCodeEditor("registerFile.v", 71, 52); // bP (w, cs)
+selectCodeEditor("registerFile.v", 58, 53); // bP (w, cs)
+selectCodeEditor("registerFile.v", 66, 53); // bP (w, cs)
+selectCodeEditor("registerFile.v", 65, 53, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "registerFile.v", 'c'); // bP (w, cs)
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), immgen : ImmGen (ImmGen.v)]", 8, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), immgen : ImmGen (ImmGen.v)]", 8, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("ImmGen.v", 165, 61); // bP (w, cs)
+typeControlKey((HResource) null, "ImmGen.v", 'c'); // bP (w, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), ALUcont : ALU_Control (ALU_Control.v)]", 9, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), ALUcont : ALU_Control (ALU_Control.v)]", 9, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("ALU_Control.v", 203, 74); // bP (w, cs)
+typeControlKey((HResource) null, "ALU_Control.v", 'c'); // bP (w, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), ALUcont : ALU_Control (ALU_Control.v)]", 9, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), ALUs : Mux (Mux.v)]", 10, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), ALUs : Mux (Mux.v)]", 10, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("Mux.v", 132, 18); // bP (w, cs)
+typeControlKey((HResource) null, "Mux.v", 'c'); // bP (w, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), ALU : ALU_64_bit (ALU_64_bit.v)]", 11, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), ALU : ALU_64_bit (ALU_64_bit.v)]", 11, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("ALU_64_bit.v", 177, 59); // bP (w, cs)
+selectCodeEditor("ALU_64_bit.v", 188, 62); // bP (w, cs)
+selectCodeEditor("ALU_64_bit.v", 199, 75); // bP (w, cs)
+typeControlKey((HResource) null, "ALU_64_bit.v", 'c'); // bP (w, cs)
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), datamem : Data_Memory (Data_Memory.v)]", 12, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), datamem : Data_Memory (Data_Memory.v)]", 12, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("Data_Memory.v", 168, 15); // bP (w, cs)
+typeControlKey((HResource) null, "Data_Memory.v", 'c'); // bP (w, cs)
+// Elapsed time: 26 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), memreg : Mux (Mux.v)]", 13, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), memreg : Mux (Mux.v)]", 13, false, false, false, false, false, true); // B (F, cs) - Double Click
+typeControlKey((HResource) null, "Mux.v", 'c'); // bP (w, cs)
+// Elapsed time: 112 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v)]", 1, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v)]", 1, true, false, false, false, false, true); // B (F, cs) - Double Click - Node
+selectCodeEditor("risc5processor.v", 195, 256); // bP (w, cs)
+typeControlKey((HResource) null, "risc5processor.v", 'c'); // bP (w, cs)
+// Elapsed time: 10 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v)]", 1); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), regf : registerFile (registerFile.v)]", 7, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), regf : registerFile (registerFile.v)]", 7, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Elapsed time: 13 seconds
+selectCodeEditor("registerFile.v", 139, 275); // bP (w, cs)
+typeControlKey((HResource) null, "registerFile.v", 'c'); // bP (w, cs)
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), pc : Program_Counter (Program_Counter.v)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), pc : Program_Counter (Program_Counter.v)]", 2, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("Program_Counter.v", 172, 385); // bP (w, cs)
+typeControlKey((HResource) null, "Program_Counter.v", 'c'); // bP (w, cs)
+// Elapsed time: 15 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), ALUs : Mux (Mux.v)]", 10, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), ALU : ALU_64_bit (ALU_64_bit.v)]", 11, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), ALUs : Mux (Mux.v)]", 10, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), ALUs : Mux (Mux.v)]", 10, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("Mux.v", 84, 249); // bP (w, cs)
+typeControlKey((HResource) null, "Mux.v", 'c'); // bP (w, cs)
+// Elapsed time: 38 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), insmem : Instruction_Memory (Instruction_Memory.v)]", 4, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), insmem : Instruction_Memory (Instruction_Memory.v)]", 4, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("Instruction_Memory.v", 309, 342); // bP (w, cs)
+typeControlKey((HResource) null, "Instruction_Memory.v", 'c'); // bP (w, cs)
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), inspar : InsParser (InsParser.v)]", 5, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), inspar : InsParser (InsParser.v)]", 5, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("InsParser.v", 310, 412); // bP (w, cs)
+typeControlKey((HResource) null, "InsParser.v", 'c'); // bP (w, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), immgen : ImmGen (ImmGen.v)]", 8, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), immgen : ImmGen (ImmGen.v)]", 8, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("ImmGen.v", 335, 385); // bP (w, cs)
+typeControlKey((HResource) null, "ImmGen.v", 'c'); // bP (w, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), datamem : Data_Memory (Data_Memory.v)]", 12, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), datamem : Data_Memory (Data_Memory.v)]", 12, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("Data_Memory.v", 216, 419); // bP (w, cs)
+typeControlKey((HResource) null, "Data_Memory.v", 'c'); // bP (w, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), conunit : Control_Unit (Control_Unit.v)]", 6, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), conunit : Control_Unit (Control_Unit.v)]", 6, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("Control_Unit.v", 275, 336); // bP (w, cs)
+typeControlKey((HResource) null, "Control_Unit.v", 'c'); // bP (w, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), add2 : Adder (Adder.v)]", 14, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), add2 : Adder (Adder.v)]", 14, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("Adder.v", 222, 426); // bP (w, cs)
+typeControlKey((HResource) null, "Adder.v", 'c'); // bP (w, cs)
+typeControlKey((HResource) null, "Adder.v", 'c'); // bP (w, cs)
+selectCodeEditor("Adder.v", 172, 314); // bP (w, cs)
+selectCodeEditor("Adder.v", 151, 292); // bP (w, cs)
+selectCodeEditor("Adder.v", 29, 247); // bP (w, cs)
+// TclEventType: SIMULATION_ADD_BREAKPOINT
+// Tcl Message: add_bp {D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Adder.v} 12 
+// TclEventType: SIMULATION_DELETE_BREAKPOINT
+// Tcl Message: remove_bps -file {D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Adder.v} -line 12 
+// TclEventType: SIMULATION_ADD_BREAKPOINT
+// Tcl Message: add_bp {D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Adder.v} 12 
+// TclEventType: SIMULATION_DELETE_BREAKPOINT
+// Tcl Message: remove_bps -file {D:/Universty Files/Solution 5,6,7,8,9,10/CALab09/Adder.v} -line 12 
+selectCodeEditor("Adder.v", 107, 268); // bP (w, cs)
+selectCodeEditor("Adder.v", 121, 282); // bP (w, cs)
+selectCodeEditor("Adder.v", 122, 284, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("Adder.v", 214, 287); // bP (w, cs)
+typeControlKey((HResource) null, "Adder.v", 'c'); // bP (w, cs)
+// Elapsed time: 37 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), ALUcont : ALU_Control (ALU_Control.v)]", 9, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), ALUcont : ALU_Control (ALU_Control.v)]", 9, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("ALU_Control.v", 210, 375); // bP (w, cs)
+typeControlKey((HResource) null, "ALU_Control.v", 'c'); // bP (w, cs)
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), ALU : ALU_64_bit (ALU_64_bit.v)]", 11, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), ALU : ALU_64_bit (ALU_64_bit.v)]", 11, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("ALU_64_bit.v", 228, 376); // bP (w, cs)
+typeControlKey((HResource) null, "ALU_64_bit.v", 'c'); // bP (w, cs)
+// Elapsed time: 23 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 17); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, risc5tb (risc5tb.v)]", 19, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, risc5tb (risc5tb.v)]", 19, true, false, false, false, false, true); // B (F, cs) - Double Click - Node
+selectCodeEditor("risc5tb.v", 122, 83); // bP (w, cs)
+typeControlKey((HResource) null, "risc5tb.v", 'c'); // bP (w, cs)
+// Elapsed time: 24 seconds
+selectCodeEditor("risc5tb.v", 431, 359); // bP (w, cs)
+typeControlKey((HResource) null, "risc5tb.v", 'c'); // bP (w, cs)
+// Elapsed time: 234 seconds
+selectCodeEditor("risc5tb.v", 375, 537); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,005 MB. GUI used memory: 90 MB. Current time: 5/5/23, 11:51:31 PM PKT
+// Elapsed time: 107 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), add1 : Adder (Adder.v)]", 3, false); // B (F, cs)
+// [GUI Memory]: 149 MB (+232kb) [00:35:14]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), add1 : Adder (Adder.v)]", 3, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Elapsed time: 348 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v)]", 1, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v)]", 1, true, false, false, false, false, true); // B (F, cs) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v)]", 1, true); // B (F, cs) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v)]", 1); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), pc : Program_Counter (Program_Counter.v)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), pc : Program_Counter (Program_Counter.v)]", 2, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), add1 : Adder (Adder.v)]", 3, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), add1 : Adder (Adder.v)]", 3, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), insmem : Instruction_Memory (Instruction_Memory.v)]", 4, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), insmem : Instruction_Memory (Instruction_Memory.v)]", 4, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Elapsed time: 24 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), inspar : InsParser (InsParser.v)]", 5, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, risc5processor (risc5processor.v), inspar : InsParser (InsParser.v)]", 5, false, false, false, false, false, true); // B (F, cs) - Double Click
