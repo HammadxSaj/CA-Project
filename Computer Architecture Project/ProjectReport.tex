@@ -426,6 +426,275 @@ module Data_Memory
 endmodule
 \end{lstlisting}
 
+\subsection{Instruction Memory}
+
+\begin{lstlisting}[caption={Changes to Instruction Memory}, captionpos=b, language=RISC-V]
+    module Instruction_Memory
+    (
+        input [63:0] Inst_Address,
+        output reg [31:0] Instruction
+    );
+        reg [7:0] inst_mem [147:0];
+        
+        initial
+        begin
+        
+            //addi x11, x0, 6
+            inst_mem[0]=8`b10010011;
+            inst_mem[1]=8`b00000101;
+            inst_mem[2]=8`b01100000;
+            inst_mem[3]=8`b0;
+            
+            //addi x29, x0, 6
+            inst_mem[4]=8`b10010011;
+            inst_mem[5]=8`b00001110;
+            inst_mem[6]=8`b01100000;
+            inst_mem[7]=8`b0;
+            
+            //addi x30, x0, 0
+            inst_mem[8]=8`b00010011;
+            inst_mem[9]=8`b00001111;
+            inst_mem[10]=8`b00000000;
+            inst_mem[11]=8`b0;
+            
+            //addi x31 x0 0
+            inst_mem[12]=8`b00010011;
+            inst_mem[13]=8`b00001111;
+            inst_mem[14]=8`b00000000;
+            inst_mem[15]=8`b0;
+            
+            //addi x28, x0, 6
+            inst_mem[16]=8`b00010011;
+            inst_mem[17]=8`b00001110;
+            inst_mem[18]=8`b01100000;
+            inst_mem[19]=8`b0;
+            
+            //sw x11, 256(x30)
+            inst_mem[20]=8`b00100011;
+            inst_mem[21]=8`b00100000;
+            inst_mem[22]=8`b10111111;
+            inst_mem[23]=8`b00010000;
+            
+            //addi x31 x31 1
+            inst_mem[24]=8`b10010011;
+            inst_mem[25]=8`b10001111;
+            inst_mem[26]=8`b00011111;
+            inst_mem[27]=8`b0;
+            
+            //addi x30 x30 8
+            inst_mem[28]=8`b00010011;
+            inst_mem[29]=8`b00001111;
+            inst_mem[30]=8`b10001111;
+            inst_mem[31]=8`b0;
+            
+            //addi x11 x11 -1
+            inst_mem[32]=8`b10010011;
+            inst_mem[33]=8`b10000101;
+            inst_mem[34]=8`b11110101;
+            inst_mem[35]=8`b11111111;
+           
+            //beq x28 x31 8
+            inst_mem[36]=8`b01100011;
+            inst_mem[37]=8`b00000100;
+            inst_mem[38]=8`b11111110;
+            inst_mem[39]=8`b00000001;
+    
+            //beq x0 x0 -20
+            inst_mem[40]=8`b11100011;
+            inst_mem[41]=8`b00000110;
+            inst_mem[42]=8`b00000000;
+            inst_mem[43]=8`b11111110;
+            
+            //addi x30 x0 0
+            inst_mem[44]=8`b00010011;
+            inst_mem[45]=8`b00001111;
+            inst_mem[46]=8`b00000000;
+            inst_mem[47]=8`b0;
+            
+            //addi x31 x30 0
+            inst_mem[48]=8`b10010011;
+            inst_mem[49]=8`b00001111;
+            inst_mem[50]=8`b00001111;
+            inst_mem[51]=8`b0;
+            
+            //addi x29 x0 0
+            inst_mem[52]=8`b10010011;
+            inst_mem[53]=8`b00001110;
+            inst_mem[54]=8`b0;
+            inst_mem[55]=8`b0;
+            
+            //addi x11 x0 6
+            inst_mem[56]=8`b10010011;
+            inst_mem[57]=8`b00000101;
+            inst_mem[58]=8`b01100000;
+            inst_mem[59]=8`b0;
+            
+            //beq x11 x30 88
+            inst_mem[60]=8`b01100011;
+            inst_mem[61]=8`b10001100;
+            inst_mem[62]=8`b11100101;
+            inst_mem[63]=8`b00000101;
+            
+            //add x10 x29 x0
+            inst_mem[64]=8`b00110011;
+            inst_mem[65]=8`b10000101;
+            inst_mem[66]=8`b00001110;
+            inst_mem[67]=8`b0;
+            
+            //addi x31 x30 1
+            inst_mem[68]=8`b10010011;
+            inst_mem[69]=8`b00001111;
+            inst_mem[70]=8`b00011111;
+            inst_mem[71]=8`b0;
+            
+            //addi x28 x29 8
+            inst_mem[72]=8`b00010011;
+            inst_mem[73]=8`b10001110;
+            inst_mem[74]=8`b10001110;
+            inst_mem[75]=8`b0;
+            
+            //beq x31 x11 48
+            inst_mem[76]=8`b01100011;
+            inst_mem[77]=8`b10001000;
+            inst_mem[78]=8`b10111111;
+            inst_mem[79]=8`b00000010;
+            
+            //lw x15 256(x28)
+            inst_mem[80]=8`b10000011;
+            inst_mem[81]=8`b00100111;
+            inst_mem[82]=8`b00001110;
+            inst_mem[83]=8`b00010000;
+            
+            //lw x16 256(x10)
+            inst_mem[84]=8`b00000011;
+            inst_mem[85]=8`b00101000;
+            inst_mem[86]=8`b00000101;
+            inst_mem[87]=8`b00010000;
+            
+            //blt x15 x16 28
+            inst_mem[88]=8`b01100011;
+            inst_mem[89]=8`b11001110;
+            inst_mem[90]=8`b00000111;
+            inst_mem[91]=8`b00000001;
+            
+            //addi x31 x31 1
+            inst_mem[92]=8`b10010011;
+            inst_mem[93]=8`b10001111;
+            inst_mem[94]=8`b00011111;
+            inst_mem[95]=8`b00000000;
+            
+            //addi x28 x28 8
+            inst_mem[96]=8`b00010011;
+            inst_mem[97]=8`b00001110;
+            inst_mem[98]=8`b10001110;
+            inst_mem[99]=8`b00000000;
+        
+            //beq x0 x0 -24
+            inst_mem[100]=8`b11100011;
+            inst_mem[101]=8`b00000100;
+            inst_mem[102]=8`b00000000;
+            inst_mem[103]=8`b11111110;
+            
+            //addi x30 x30 1
+            inst_mem[104]=8`b00010011;
+            inst_mem[105]=8`b00001111;
+            inst_mem[106]=8`b00011111;
+            inst_mem[107]=8`b0;
+            
+            //addi x28 x28 8
+            inst_mem[108]=8`b00010011;
+            inst_mem[109]=8`b00001110;
+            inst_mem[110]=8`b10001110;
+            inst_mem[111]=8`b0;
+            
+            //beq x0 x0 -52
+            inst_mem[112]=8`b11100011;
+            inst_mem[113]=8`b00000110;
+            inst_mem[114]=8`b00000000;
+            inst_mem[115]=8`b11111100;
+            
+            //addi x10 x28 0
+            inst_mem[116]=8`b00010011;
+            inst_mem[117]=8`b00000101;
+            inst_mem[118]=8`b00001110;
+            inst_mem[119]=8`b0;
+            
+            //beq x0 x0 -28
+            inst_mem[120]=8`b11100011;
+            inst_mem[121]=8`b00000010;
+            inst_mem[122]=8`b00000000;
+            inst_mem[123]=8`b11111110;
+            
+            //lw x13 256(x10)
+            inst_mem[124]=8`b10000011;
+            inst_mem[125]=8`b00100110;
+            inst_mem[126]=8`b00000101;
+            inst_mem[127]=8`b00010000;
+            
+            //lw x14 256(x29)
+            inst_mem[128]=8`b00000011;
+            inst_mem[129]=8`b10100111;
+            inst_mem[130]=8`b00001110;
+            inst_mem[131]=8`b00010000;
+            
+            //sw x13 256(x29)
+            inst_mem[132]=8`b00100011;
+            inst_mem[133]=8`b10100000;
+            inst_mem[134]=8`b11011110;
+            inst_mem[135]=8`b00010000;
+            
+            //sw x14 256(x10)
+            inst_mem[136]=8`b00100011;
+            inst_mem[137]=8`b00100000;
+            inst_mem[138]=8`b11100101;
+            inst_mem[139]=8`b00010000;
+            
+            //addi x29 x29 8
+            inst_mem[140]=8`b10010011;
+            inst_mem[141]=8`b10001110;
+            inst_mem[142]=8`b10001110;
+            inst_mem[143]=8`b0;
+            
+            //beq x0 x0 -40
+            inst_mem[144]=8`b11100011;
+            inst_mem[145]=8`b00001100;
+            inst_mem[146]=8`b00000000;
+            inst_mem[147]=8`b11111100;
+    
+        end
+        
+        always @(Inst_Address)
+        begin
+            Instruction={inst_mem[Inst_Address+3],inst_mem[Inst_Address+2],inst_mem[Inst_Address+1],inst_mem[Inst_Address]};
+        end
+    endmodule
+\end{lstlisting}
+
+\subsection{Results for Single Cycle Pipeline}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[width = 13 cm]{loadingvalues.jpeg}
+    \caption{Loading the set of inputs}
+    \label{fig: label 1}
+\end{figure}
+
+Firstly, checking if the values are being loaded into the processor correctly. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[width = 13 cm]{firstsorting.jpeg}
+    \caption{Sorting the set of inputs}
+    \label{fig: label 2}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[width = 13 cm]{final_sorted.jpeg}
+    \caption{Final Sorted set of elements}
+    \label{fig: label 3}
+\end{figure}
+
 \section{Task 2 - Introducing Pipeline Stages}
 
 A difficulty with implementation of single cycle processor is that the processor only executes one instruction at a time, and only after that instruction is finished is execution of the subsequent instruction begins, which is counter-productive. Given that the majority of the components in our processors would remain idle, it is immediately clear how wasteful this would be and how much processing power it would waste. This is why, in this section, we'll try to fix it by adding pipelining to our single-cycle processor.
@@ -680,6 +949,7 @@ Let us say we have to run an arbitrary set of instructions on the pipelined vers
 \begin{lstlisting}[caption={Arbitrary Set of instructions}, captionpos=b, language=RISC-V]
 add x1, x2, x3
 add x4, x1, x2
+add x5 , x4 , x1
 \end{lstlisting}
 
 Our processor would now execute the first instruction without issue, but let's try to analyse the second instruction. The second instruction would be in the Instruction decoding stage when the first instruction would be in the execution stage, and as we have seen, this stage is also responsible for reading the values of the register. Therefore, when reading the values stored in the register, the value in x1 for the second instruction should be the sum of the values in x2 and x3. 
@@ -761,7 +1031,26 @@ module Four_MUX(
     end 
 endmodule
 \end{lstlisting}
+
+\subsection{Result for the Forwarding Unit}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[width = 13 cm]{forwarding.jpeg}
+    \caption{Result of Forwarding Unit}
+    \label{fig: label 4}
+\end{figure}
     
+The forwarding unit works according to the three instructions we have used which are the followed;
+
+\begin{lstlisting}[caption={Arbitrary Set of instructions}, captionpos=b, language=RISC-V]
+    add x1, x2, x3
+    add x4, x1, x2
+    add x5 , x4 , x1
+\end{lstlisting}
+
+Since the source register x1 of instruction 1 is being used as a input register in the second instruction that is why the forwarding bit is 2 because the second condition is true. For the third instruction we are getting 1 for forwardA, because x4 which is the source of the previous instruction is being used as an input in this instruction. We are also getting forwardB as 2, because we are using x1, source of the first instruction as the second input in the third instruction.
+
 \subsection{Hazard Detection Unit}
 Hazard detection unit is an essential component of pipelined processors that helps to detect and resolve hazards that can occur due to the pipelining of instructions. It enables the processor to handle instruction dependencies and avoid pipeline stalls or data hazards, thereby improving the performance of the processor. The hazard detection unit is implemented in the following way in our processor.
 
@@ -859,55 +1148,20 @@ The first set of input signals is selected when the sel input is 0. In this case
 
 The second set of input signals is selected when the sel input is 1. In this case, the output signals are set based on the input signals. The branch\_eq\_hazard output signal is set to the value of the branch input, indicating that there is a branch hazard if the branch input is asserted. The MemRead\_hazard output signal is set to the value of the MemRead input, indicating that there is a memory read hazard if the MemRead input is asserted. The MemtoReg\_hazard output signal is set to the value of the MemtoReg input, indicating that there is a memory-to-register hazard if the MemtoReg input is asserted. The MemWrite\_hazard output signal is set to the value of the MemWrite input, indicating that there is a memory write hazard if the MemWrite input is asserted. The ALUsrc\_hazard output signal is set to the value of the ALUsrc input, indicating that there is an ALU source hazard if the ALUsrc input is asserted. The RegWrite\_hazard output signal is set to the value of the RegWrite input, indicating that there is a register write hazard if the RegWrite input is asserted. The ALU\_Op\_hazard output signal is set to the value of the ALU\_Op input, indicating that there is an ALU operation hazard if the ALU\_Op input is asserted.
 
-\section{Results}
-We will now test our final design. We will check if the pipelined processor is working as intended. 
+\subsection{Result for the Hazard Detection unit}
 
-\begin{figure}[h]
+\begin{figure}[!h]
     \centering
-    \includegraphics*[width = 13 cm]{loadingvalues.jpeg}
-    \caption{Loading the set of inputs}
-    \label{fig: label 1}
-\end{figure}
-
-Firstly, checking if the values are being loaded into the processor correctly. 
-
-\begin{figure}[h]
-    \centering
-    \includegraphics*[width = 13 cm]{firstsorting.jpeg}
-    \caption{Sorting the set of inputs}
-    \label{fig: label 2}
-\end{figure}
-
-Checking if the sorting is working correctly and the following is our final sorted result. 
-
-\begin{figure}[h]
-    \centering
-    \includegraphics*[width = 13 cm]{final_sorted.jpeg}
-    \caption{Final Sorted set of elements}
-    \label{fig: label 3}
-\end{figure}
-
-The final thing is to check if the forwarding is working correctly according to the conditions put in place for the forwarding unit to work correctly.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics*[width = 13 cm]{forwarding.jpeg}
-    \caption{Result of Forwarding Unit}
-    \label{fig: label 4}
-\end{figure}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics*[width = 10 cm]{hazarddetectionfinalsorted.jpeg}
-    \caption{Hazard detection final sorted}
-    \label{fig: label 5}
-\end{figure}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics*[width = 10 cm]{stallingfinalsorted.jpeg}
+    \includegraphics*[width = 9 cm]{stallingfinalsorted.jpeg}
     \caption{Stalling final sorted}
-    \label{fig: label 6}
+    \label{fig:label6}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics*[width = 9 cm]{hazarddetectionfinalsorted.jpeg}
+    \caption{Hazard detection final sorted}
+    \label{fig:label5}
 \end{figure}
 
 When stalling occurs, instruction becomes zero which is the no operation instruction. This is because the instruction is not being executed and is being stalled. As a result of this, RS and RD also becomes zero. The control signals are also set to zero. The control bit is the bit which signifies stalling.
@@ -921,7 +1175,6 @@ A non-pipelined processor executes each instruction in a sequential manner, mean
 A pipelined processor is generally faster and more efficient than a non-pipelined processor because it can process instructions simultaneously and this is exactly what we have seen over the course of this semester and the project. However, while designing a pipelined single-cycle processor, one has to keep in mind to not add bottlenecks and add remedies to data hazards for the processor to work efficiently.
 
 In a non-pipelined single cycle processor, the sorting takes place in 18340000 ns, while in a pipelined single cycle processor, the sorting takes place in 623000 ns. This is a significant improvement in the performance of the processor and this happens precisely because of the reasons explained earlier in this
-
 
 \section{Final Comments}
 The project has been a unique challenge in a way that it required tedious amounts of debugging the code and modules to figure out what the problem is. At times even after hours of trying to figure out the problem, we could not reach to a correct conclusion. As a result, branching has not been implemented properly in our project, while forwarding unit and hazard detection is working. The failure to implement branching correctly is not down to a lack of effort and time, but guessing it is rather down to a very small error which is not visible to the eye. 
